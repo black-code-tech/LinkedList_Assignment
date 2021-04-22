@@ -1,14 +1,14 @@
 package implementation.singlylinkedlist;
 
-public class LinkedList {
+public class LinkedList<T> {
     // The object head of the linked list
-    Node head;
+    Node<T> head;
 
     // This method will add a new node to the start of the list
-    public void insertAtStart(int data)
+    public void insertAtStart(T data)
     {
         // Creating an instance of the Node object
-        Node node = new Node();
+        Node<T> node = new Node<T>();
 
         // Assign the parameter to the node object data
         node.data = data;
@@ -21,10 +21,10 @@ public class LinkedList {
     }
 
     // This method will add a new node at a preferred location of the list
-    public void insertAt(int index, int data)
+    public void insertAt(int index, T data)
     {
         // Creating an instance of the Node object
-        Node node = new Node();
+        Node<T> node = new Node<T>();
 
         // Assign the parameter to the node object data
         node.data = data;
@@ -40,7 +40,7 @@ public class LinkedList {
         }
         else {
             // Assign the head to a new node object for iteration
-            Node n = head;
+            Node<T> n = head;
 
             // Iterate till the last node
             for (int i = 0; i < index - 1; i++) {
@@ -65,10 +65,10 @@ public class LinkedList {
        }
        else{
            // Assign the head to a new node object for iteration
-           Node n = head;
+           Node<T> n = head;
 
            // A helper object
-           Node n1 = null;
+           Node<T> n1 = null;
 
            // Iterate till the index - 1 of the list
            for (int i = 0; i < index - 1; i++) {
@@ -88,10 +88,10 @@ public class LinkedList {
     }
 
     // This method will add a new node to the end of the list
-    public void insert(int data)
+    public void insert(T data)
     {
         // Creating an instance of the Node object
-        Node node = new Node();
+        Node<T> node = new Node<T>();
 
         // Assign the parameter to the node object data
         node.data = data;
@@ -108,7 +108,7 @@ public class LinkedList {
         // Look for the last node
         else{
             // Assign the head to a new node object for iteration
-            Node n = head;
+            Node<T> n = head;
 
             // Iterate till the last node
             while (n.next != null)
@@ -126,7 +126,7 @@ public class LinkedList {
     public void show()
     {
         // Assign the head of the list to a new object of the node class
-        Node node = head;
+        Node<T> node = head;
 
         // Iterate till the last node
         while (node.next != null)

@@ -2,8 +2,8 @@ package implementation.stack;
 
 public class Main {
     public static void main(String[] args) {
-        DStack stack = new DStack();
-//        Stack stack = new Stack();
+        DStack<Integer> stack = new DStack<Integer>();
+//        Stack<Integer> stack = new Stack<Integer>();
 
         stack.Push(15);
         stack.Push(8);

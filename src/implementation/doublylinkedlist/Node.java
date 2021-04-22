@@ -1,9 +1,14 @@
 package implementation.doublylinkedlist;
 
-public class Node {
-    // The integer data of a node
-    int data;
-
-    // The pointer to help in moving through the list
+public class Node<T> {
+    T data;
+    Node prev;
     Node next;
+
+    // Constructor to create a new node
+    Node(T incomingData) {
+
+        //Assigning the incoming data to our data object
+        data = incomingData;
+    }
 }

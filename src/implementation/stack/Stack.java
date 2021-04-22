@@ -1,15 +1,15 @@
 package implementation.stack;
 
-public class Stack {
+public class Stack<T> {
 
-    int[] stack = new int[5];
+    T[] stack = (T[])new Object[5];
 
     //A variable to represent the last element in the stack by index.
     int top = 0;
 
     //This method will add an element to the stack
     //It accepts accepts an integer as the parameter or element to be added.
-    public void Push(int data) {
+    public void Push(T data) {
         //Checking if the stack is full(i.e using a limited array)
         if (top == 5){
             //Feedback to the user
@@ -38,10 +38,10 @@ public class Stack {
             top--;
 
             //Assigning the value to a local variable for output
-            int data = stack[top];
+            T data = stack[top];
 
             //Assigning 0 to the last index.
-            stack[top] = 0;
+            stack[top] = null;
 
             //Feedback
             System.out.println(data);
@@ -53,7 +53,7 @@ public class Stack {
     public void Peek() {
 
         //Fetching the last element
-        int data = stack[top - 1];
+        T data = stack[top - 1];
 
         //Feedback
         System.out.println(data);
@@ -74,7 +74,7 @@ public class Stack {
     //This method will display all the elements of the stack.
     public void Show() {
         //Looping through all the elements of the stack
-        for (int n : stack)
+        for (T n : stack)
         {
             //Feedback
             System.out.print(n + " ");

@@ -1,15 +1,15 @@
 package implementation.stack;
-
-public class DStack {
+/* Dynamic Sized Stack ADT */
+public class DStack<T> {
     int capacity = 2;
-    int[] stack = new int[capacity];
+    T[] stack= (T[]) new Object[capacity];
 
     //A variable to represent the last element in the stack by index.
     int top = 0;
 
     //This method will add an element to the stack
     //It accepts accepts an integer as the parameter or element to be added.
-    public void Push(int data) {
+    public void Push(T data) {
         //Checking if the stack is full
         if (Size() == capacity){
             //Feedback to the user
@@ -29,7 +29,7 @@ public class DStack {
         int length = Size();
 
         //Creating a new array with twice the size of the first.
-        int[] newStack = new int[capacity*2];
+        T[] newStack = (T[]) new Object[capacity*2];
 
         //Copying the elements in the old array into the new one.
         System.arraycopy(stack,0,newStack,0,length);
@@ -54,10 +54,10 @@ public class DStack {
             top--;
 
             //Assigning the value to a local variable for output
-            int data = stack[top];
+            T data = stack[top];
 
             //Assigning 0 to the last index.
-            stack[top] = 0;
+            stack[top] = null;
 
             //Feedback
             System.out.println(data);
@@ -77,7 +77,7 @@ public class DStack {
             capacity = capacity/2;
 
             //Creating a new array with dynamic size.
-            int[] newStack = new int[capacity];
+            T[] newStack = (T[]) new Object[capacity];
 
             //Copying the elements in the old array into the new one.
             System.arraycopy(stack,0,newStack,0,length);
@@ -91,7 +91,7 @@ public class DStack {
     public void Peek() {
 
         //Fetching the last element
-        int data = stack[top - 1];
+        T data = stack[top - 1];
 
         //Feedback
         System.out.println(data);
@@ -113,7 +113,7 @@ public class DStack {
     //This method will display all the elements of the stack.
     public void Show() {
         //Looping through all the elements of the stack
-        for (int n : stack)
+        for (T n : stack)
         {
             //Feedback
             System.out.print(n + " ");

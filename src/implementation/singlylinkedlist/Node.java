@@ -1,9 +1,9 @@
 package implementation.singlylinkedlist;
 
-public class Node {
+public class Node<T> {
     // The integer data of a node
-    int data;
+    T data;
 
     // The pointer to help in moving through the list
-    Node next;
+    Node<T> next;
 }
